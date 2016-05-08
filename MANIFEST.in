@@ -1,0 +1,14 @@
+# Include Misc files
+include README.rst
+include LICENSE
+
+# inlcude templatesc
+recursive-include rabbitChat/templates *
+
+# include static js files
+recursive-include rabbotChat/static/js *
+
+# include static css files
+recursive-include rabbitChat/static/css *
+
+
