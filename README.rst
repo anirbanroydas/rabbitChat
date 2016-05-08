@@ -125,7 +125,9 @@ After having installed rabbitChat, just the run the following commands to use it
   Click ``Ctrl+C`` to stop the server.
 
 
+
 TODO
+-----
 
 1. Add Private Chat functionality.
    
