@@ -44,6 +44,8 @@ Technical Specs
 :RabbitMQ: A Message Broker implementing AMQP
 
 
+
+
 Installation
 ------------
 
@@ -94,9 +96,41 @@ If above dependencies do not get installed by the above command, then use the be
          $ pip install pika
 
  **Step 5 - Install RabbitMQ**
+ 
+ For ``Mac Users``
+ 
+ 1. Brew Install RabbitMQ
  ::
 
          $ brew install rabbitmq
+
+ 2. Configure RabbitMq, follow this `link <https://www.rabbitmq.com/install-homebrew.html>`_, this `one <https://www.rabbitmq.com/install-standalone-mac.html>`_ and  `this <https://www.rabbitmq.com/configure.html>`_.
+
+ For ``Ubuntu/Linux`` Users
+
+ 1. Enable RabbitMQ application repository
+ ::
+            
+ $ echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
+
+ 2. Add the verification key for the package
+ ::
+
+         $ wget -o http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
+
+ 3. Update the sources with our new addition from above
+ ::
+
+         $ apt-get update
+
+  
+ 4. And finally, download and install RabbitMQ
+ ::
+
+         $ sudo apt-get install rabbitmq-server
+
+ 
+ 5. Configure RabbitMQ, follow this `link <http://www.rabbitmq.com/install-debian.html>`_, this `one <https://www.rabbitmq.com/configure.html>`_  and `this <https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-rabbitmq>`_. 
 
 
 Usage
@@ -104,7 +138,44 @@ Usage
 
 After having installed rabbitChat, just the run the following commands to use it:
 
-* **Start Server**
+* **Start RabbitMQ Server**
+  
+  1. For ``Mac`` Users
+  ::
+          
+          # start normally
+          $ rabbitmq-server
+           
+          # If you want to run in background
+          $ rabbitmq-server --detached 
+
+          # start using brew rervices (doesn't work with tmux)
+          $ brew services rabbitmq start
+
+  2. For ``Ubuntu/LInux`` Users
+  ::
+
+          # start normally
+          $ rabbitmq-server
+
+          # If you want to run in background
+          $ rabbitmq-server --detached
+
+          # To start using service
+          $ service rabbitmq-server start
+
+          # To stop using service
+          $ service rabbitmq-server stop
+          
+          # To restart using service
+          $ service rabbitmq-server restart
+          
+          # To check the status
+          $ service rabbitmq-server status
+
+
+
+* **Start rabbitChat Server**
   ::
 
           $ rabbitChat [options]
