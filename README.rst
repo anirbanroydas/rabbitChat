@@ -97,40 +97,42 @@ If above dependencies do not get installed by the above command, then use the be
 
  **Step 5 - Install RabbitMQ**
  
- For ``Mac Users``
+ * *For* ``Mac`` *Users*
  
- 1. Brew Install RabbitMQ
- ::
+   1. Brew Install RabbitMQ
+   ::
 
          $ brew install rabbitmq
 
- 2. Configure RabbitMq, follow this `link <https://www.rabbitmq.com/install-homebrew.html>`_, this `one <https://www.rabbitmq.com/install-standalone-mac.html>`_ and  `this <https://www.rabbitmq.com/configure.html>`_.
+   2. Configure RabbitMq, follow this `link <https://www.rabbitmq.com/install-homebrew.html>`_, this `one <https://www.rabbitmq.com/install-standalone-mac.html>`_ and  `this <https://www.rabbitmq.com/configure.html>`_.
 
- For ``Ubuntu/Linux`` Users
+ * *For* ``Ubuntu/Linux`` *Users*
 
- 1. Enable RabbitMQ application repository
- ::
-            
- $ echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
+   1. Enable RabbitMQ application repository
+   ::
+           
+           $ echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
 
- 2. Add the verification key for the package
- ::
+   2. Add the verification key for the package
+   ::
 
          $ wget -o http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
 
- 3. Update the sources with our new addition from above
- ::
+   3. Update the sources with our new addition from above
+   :: 
 
          $ apt-get update
 
   
- 4. And finally, download and install RabbitMQ
- ::
+   4. And finally, download and install RabbitMQ
+   ::
 
          $ sudo apt-get install rabbitmq-server
 
  
- 5. Configure RabbitMQ, follow this `link <http://www.rabbitmq.com/install-debian.html>`_, this `one <https://www.rabbitmq.com/configure.html>`_  and `this <https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-rabbitmq>`_. 
+
+   5. Configure RabbitMQ, follow this `link <http://www.rabbitmq.com/install-debian.html>`_, this `one <https://www.rabbitmq.com/configure.html>`_  and `this <https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-rabbitmq>`_. 
+
 
 
 Usage
@@ -138,9 +140,9 @@ Usage
 
 After having installed rabbitChat, just the run the following commands to use it:
 
-* **Start RabbitMQ Server**
+* **RabbitMQ Server**
   
-  1. For ``Mac`` Users
+  1. *For* ``Mac`` *Users*
   ::
           
           # start normally
@@ -152,7 +154,7 @@ After having installed rabbitChat, just the run the following commands to use it
           # start using brew rervices (doesn't work with tmux)
           $ brew services rabbitmq start
 
-  2. For ``Ubuntu/LInux`` Users
+  2. *For* ``Ubuntu/LInux`` *Users*
   ::
 
           # start normally
@@ -180,24 +182,24 @@ After having installed rabbitChat, just the run the following commands to use it
 
           $ rabbitChat [options]
 
-* **Options**
+  - **Options**
 
-  :--port: Port number where the chat server will start
+    :--port: Port number where the chat server will start
 
 
-* **Example**
-  ::
+  - **Example**
+    ::
 
           $ rabbitChat --port=9191
 
   
-* **Stop Server**
+* **Stop rabbitChat Server**
 
   Click ``Ctrl+C`` to stop the server.
 
 
 
-TODO
+Todo
 -----
 
 1. Add Private Chat functionality.
