@@ -10,6 +10,7 @@ A Chat-Server/Chat-System based on AMQP protocol(RabbitMQ Message Broker)
 Details
 --------
 
+
 :Author: Anirban Roy Das
 :Email: anirban.nick@gmail.com
 :Copyright(C): 2016, Anirban Roy Das <anirban.nick@gmail.com>
