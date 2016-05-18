@@ -1,10 +1,14 @@
-=====================
 rabbitChat
-=====================
+===========
 
 A Chat-Server/Chat-System based on AMQP protocol(RabbitMQ Message Broker)
 
-**Home Page :** https://pypi.python.org/pypi/rabbitChat
+Documentation
+--------------
+
+**Link :** http://rabbitchat.readthedocs.io/en/latest/index.html
+
+
 
 
 Details
@@ -16,6 +20,7 @@ Details
 :Copyright(C): 2016, Anirban Roy Das <anirban.nick@gmail.com>
 
 Check ``rabbitChat/LICENSE`` file for full Copyright notice.
+
 
 
 Overview
@@ -43,6 +48,7 @@ Technical Specs
 :AMQP: Advance Message Queuing Protocol used in Message Oriented Middleware
 :pika: AMQP Python Client Library
 :RabbitMQ: A Message Broker implementing AMQP
+
 
 
 Features
@@ -165,6 +171,7 @@ After having installed rabbitChat, just the run the following commands to use it
           # start using brew rervices (doesn't work with tmux)
           $ brew services rabbitmq start
 
+
   2. *For* ``Ubuntu/LInux`` *Users*
   ::
 
@@ -205,6 +212,8 @@ After having installed rabbitChat, just the run the following commands to use it
 
   
 * **Stop rabbitChat Server**
+
+
 
   Click ``Ctrl+C`` to stop the server.
 
