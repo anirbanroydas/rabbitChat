@@ -11,4 +11,14 @@ recursive-include rabbotChat/static/js *
 # include static css files
 recursive-include rabbitChat/static/css *
 
+# include test files for development
+recursive-include tests *
+recursive-include tests/apps *
+recursive-include tests/templates *
+recursive-include tests/static/js *
+recursive-include tests/static/css *
+
+# include docs
+recursive-include docs *
+
 

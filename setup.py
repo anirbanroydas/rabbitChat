@@ -7,21 +7,21 @@
 #
 
 # Always prefer setuptools over distutils
-from setuptools import setup, find_packages
+from setuptools import setup
 # To use a consistent encoding
-import  codecs
+import codecs
 import os
 
 
-############### general config ##############
+# ############## general config ##############
 
 
 NAME = "rabbitChat"
 
 VERSION = '1.0.0'
 
-# PACKAGES = find_packages(where="sockjsChat")
-PACKAGES = ["rabbitChat", "rabbitChat.apps", "rabbitChat.apps.main"]
+
+PACKAGES = ["rabbitChat", "rabbitChat.apps", "rabbitChat.apps.main", "rabbitChat.apps.rabbitmq"]
 
 PROJECT_URL = 'https://github.com/anirbanroydas/rabbitChat'
 
@@ -34,64 +34,65 @@ KEYWORDS = ["chat server amqp protocol rabbitmq message broker via sockjs websoc
 CLASSIFIERS = [
 
     # How mature is this project? Common values are
-	#   3 - Alpha
-	#   4 - Beta
+    #   3 - Alpha
+    #   4 - Beta
     #   5 - Production/Stable
-	'Development Status :: 4 - Beta',
+    'Development Status :: 4 - Beta',
 
-	# Indicate who your project is intended for
-	'Intended Audience :: Developers',
-	
+    # Indicate who your project is intended for
+    'Intended Audience :: Developers',
+
     # Pick your license as you wish (should match "license" above)
-	'License :: OSI Approved :: MIT License',
+    'License :: OSI Approved :: MIT License',
 
-	# Specify the Natural Language 
-	'Natural Language :: English',
+    # Specify the Natural Language
+    'Natural Language :: English',
 
-	# Specify the operating systems it can work on 
-	'Operating System :: OS Independent',
-	# Specify the Python versions you support here. In particular, ensure that you indicate whether you support Python 2, Python 3 or both.
-	'Programming Language :: Python',
-	'Programming Language :: Python :: 2',
-	'Programming Language :: Python :: 2.7',
-	'Programming Language :: Python :: Implementation :: CPython',
+    # Specify the operating systems it can work on
+    'Operating System :: OS Independent',
+    # Specify the Python versions you support here. In particular, ensure that
+    # you indicate whether you support Python 2, Python 3 or both.
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 2',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: Implementation :: CPython',
 
-	]
+]
 
 INSTALL_REQUIRES = ["tornado >= 2.2.1",
                     "sockjs-tornado",
-		    "pika",
-                    "setuptools >= 0.7.0",]
+                    "pika",
+                    "setuptools >= 0.7.0", ]
 
 EXTRAS_REQUIRE = {}
 
 PACKAGE_DATA = {
-		# data files need to be listed both here (which determines what gets
-        # installed) and in MANIFEST.in (which determines what gets included
-        # in the sdist tarball)
-        "rabbitChat":["static/css/*.css",
-        			  "static/js/*.js",
-        			  "templates/*.html",
-        			  ],
+    # data files need to be listed both here (which determines what gets
+    # installed) and in MANIFEST.in (which determines what gets included
+    # in the sdist tarball)
+    "rabbitChat": ["static/css/*.css",
+                   "static/js/*.js",
+                   "templates/*.html",
+                   ],
 
-        }
+}
 
 # DATA_FILES =[]
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 
-#############  End of basic config ###########
+# ############  End of basic config ###########
 
 
 
-####  Get the long description from the README file
-with codecs.open(os.path.join(HERE, 'README.rst'), 'rb' , 'utf-8') as f:
-	LONG_DESCRIPTION = f.read()
+# Get the long description from the README file
+with codecs.open(os.path.join(HERE, 'README.rst'), 'rb', 'utf-8') as f:
+    LONG_DESCRIPTION = f.read()
 
 
 
 
-#### The main setup function ######
+# ### The main setup function ######
 setup(
     name=NAME,
 
@@ -139,9 +140,9 @@ setup(
     # $ pip install -e .[dev,test]
     extras_require=EXTRAS_REQUIRE,
 
-    # If set to True, this tells setuptools to automatically include 
-    # any data files it finds inside your package directories that 
-    # are specified by your MANIFEST.in file. 
+    # If set to True, this tells setuptools to automatically include
+    # any data files it finds inside your package directories that
+    # are specified by your MANIFEST.in file.
     # include_package_data = True
 
 
