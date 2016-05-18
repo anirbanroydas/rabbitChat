@@ -1,0 +1,542 @@
+@charset "UTF-8";
+
+
+
+h1
+{
+    margin-left: 75px;
+}
+
+body
+{
+    font-family: 'Arial';
+
+    background-color: #f0f0f0;
+}
+
+.connectbar
+{
+    width: 100%;
+}
+
+.connectbar div
+{
+    width: 150px;
+    height: 28px;
+    margin: auto;
+
+    text-align: center;
+
+    border-radius: 7px;
+    background-color: #ff326b;
+}
+
+.connectbar a
+{
+    font-family: 'Open Sans', sans-serif;
+    /* margin-left: 200px;*/
+    font-size: 18px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    color: #fff;
+}
+
+.connectbar .connectStatus
+{
+    background-color: transparent;
+    /* width: auto;*/
+}
+
+.connectbar h4
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    /* text-align: center;*/
+    /*  margin-left: 50%;
+            transform: translateX(-30px);*/
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.connectbar h4.inactive
+{
+    color: #00b1e6;
+}
+
+.connectbar h4.active
+{
+    color: #41c197;
+}
+
+.connectbar div.welcome
+{
+    /* display: inline;*/
+    width: 50%;
+
+    background-color: transparent;
+    /* height: auto;*/
+}
+
+.welcome .welcomeLine
+{
+    display: inline;
+
+    background-color: transparent;
+}
+
+.welcome .welcomeLine h2
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+
+    display: inline;
+
+    color: #00b1e6;
+}
+
+.welcome .welcomeLine h3
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    /*text-align: center;*/
+
+    display: inline;
+
+    color: #ff326b;
+}
+
+.welcome code
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    /*text-align: center;*/
+
+    display: block;
+
+    color: #ffd639;
+}
+
+.box
+{
+    float: right;
+
+    width: 335px;
+    margin: 0 20px 0 20px;
+    margin-top: 30px;
+}
+
+.boxleft
+{
+    float: left;
+}
+
+.box div
+{
+    overflow-y: scroll;
+
+    
+
+    border-color: gray;
+}
+
+.box div.groupchatTB
+{
+    height: auto;
+}
+
+.box div.groupchatTB h4
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    display: inline;
+
+    margin-bottom: 0;
+    margin-left: 80px;
+
+    color: #ff326b;
+}
+
+.boxleft div.groupchatTB h4
+{
+    margin-left: 120px;
+}
+
+.box div.groupchatTB h3
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+
+    margin-bottom: 0;
+}
+
+.box div.groupchatCB
+{
+    height: 380px;
+    width: 100%;
+    margin: 5px;
+    padding: 0;
+
+    border: 1px solid gray;
+    border-radius: 4px;
+    /*padding-bottom: 30px;
+    padding-top: 10px;*/
+    background: #fff;
+}
+
+.messages {
+  /*height: 100%;*/
+  margin: 0;
+  overflow-y: scroll;
+  font-size: 150%;
+  padding: 10px 20px 10px 10px;
+}
+
+.message{
+    display: block;
+
+}
+
+.timeinfo2{
+    font-family: 'Open Sans',sans-serif;
+    font-size:9px;
+    font-weight: 300;
+    clear: both;
+    text-align: left;
+    margin-bottom: 0px;
+    margin-top : 10px;
+}
+
+.timeTyping{
+    display:none;
+}
+
+
+.messageDiv{
+    display:block; 
+    height: auto;
+}
+
+.username {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: bold;
+    font-size:15px;
+    overflow: hidden;
+    padding-right: 15px;
+    /*float:left;*/
+    text-align: left;
+    margin-right: 15px;
+    /*display: inline;*/
+    margin-top : 0px;
+    margin-bottom: 0px;
+}
+
+
+.messageBody {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #414141;
+    /*float:left;*/
+    /*text-align: left;*/
+     /*display: inline;*/
+}
+
+
+.messages .typing .messageBody {
+  color: #a6a6a6ff;
+}
+
+
+
+
+
+.log {
+   color: #A1A1A1;
+    font-family: 'Open Sans',sans-serif;
+    font-size:12px;
+    font-weight: 400;
+  margin: 5px;
+  text-align: center;
+}
+
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+
+
+
+.box input{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.box input.groupchatCBinp{
+    width: 75%;
+    margin: 5px;
+    padding: 0;
+
+    border: 1px solid;
+    border-radius: 4px;
+    display: inline;
+
+}
+
+.box input.groupchatCBinpBtn{
+    width: 20%;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+
+    border: 1px solid;
+    border-radius: 4px;
+    background: #ffd639;
+    color: #000;
+    display: inline;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.box input.groupchatCBinpBtn:hover{
+    background: #41c197;
+    color: #fff;
+}
+
+.public .chatbox p.timeinfo{
+    color: #C2C2C2;
+    font-family: 'Open Sans',sans-serif;
+    font-size:10px;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: -15px;
+    margin-top: 20px;
+
+}
+
+.public .chatbox p.startinfo, .public .chatbox p.stopinfo{
+    color: #A1A1A1;
+    font-family: 'Open Sans',sans-serif;
+    font-size:12px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+
+.public .chatbox div.msginfo{
+    margin-left: 10px;
+    width: 320px;
+    height: auto;
+    margin-bottom: 0px;
+    margin-top:-10px;
+    display: block;
+    overflow: visible;
+   /* display: inline-block;*/
+}
+
+
+.public .chatbox div.msginfo p{
+
+     font-family: 'Open Sans',sans-serif;
+     display : inline-block;
+     margin-bottom: 0;
+     /*margin-left: 10px;*/
+
+
+}
+
+
+
+.public .chatbox div.msginfo p.namemsg{
+
+     width : auto;
+     font-size:15px;
+    font-weight: bold;
+    
+
+}
+
+
+
+.public .chatbox div.msginfo p.mainmsg{
+    font-weight: 400;
+    font-size: 14px;
+    color: #414141;
+    width: 250px;
+    height: auto;
+
+}
+
+
+
+.public .chatbox div.msginfo p.color-4876FF{
+    
+        color: #4876FF;
+}
+
+.public .chatbox div.msginfo p.color-32CD32{
+    
+        color: #32CD32;
+}
+
+.public .chatbox div.msginfo p.color-CD00CD{
+    
+        color: #CD00CD;
+}
+
+.public .chatbox div.msginfo p.color-FFC125{
+    
+        color: #FFC125;
+}
+
+.public .chatbox div.msginfo p.color-DC143C{
+    
+        color: #DC143C;
+}
+
+.public .chatbox div.msginfo p.color-8a2be2{
+    
+        color: #8a2be2;
+}
+
+.public .chatbox div.msginfo p.color-00ff7f{
+    
+        color: #00ff7f;
+}
+
+.public .chatbox div.msginfo p.color-00ced1{
+    
+        color: #00ced1;
+}
+
+.public .chatbox div.msginfo p.color-FF34B3{
+    
+        color: #FF34B3;
+}
+
+.public .chatbox div.msginfo p.color-8B8989{
+    
+        color: #8B8989;
+}
+
+.public .chatbox div.msginfo p.color-00CD66{
+    
+        color: #00CD66;
+}
+
+.public .chatbox div.msginfo p.color-EE1289{
+    
+        color: #EE1289;
+}
+
+.public .chatbox div.msginfo p.color-1E90FF{
+    
+        color: #1E90FF;
+}
+
+.public .chatbox div.msginfo p.color-FFD700{
+    
+        color: #FFD700;
+}
+
+.public .chatbox div.msginfo p.color-C67171{
+    
+        color: #C67171;
+}
+
+.public .chatbox div.msginfo p.color-33A1C9{
+    
+        color: #33A1C9;
+}
+
+.public .chatbox div.msginfo p.color-CD8500{
+    
+        color: #CD8500;
+}
+
+.public .chatbox div.msginfo p.color-2E8B57{
+    
+        color: #2E8B57;
+}
+
+.public .chatbox div.msginfo p.color-68228B{
+    
+        color: #68228B;
+}
+
+.public .chatbox div.msginfo p.color-00C5CD{
+    
+        color: #00C5CD;
+}
+
+
+
+
+.boxright div.privateList
+{
+    overflow: scroll;
+
+    background: #fff;
+}
+
+.boxright div.privateList .privateUserList
+{
+    width: 320px;
+
+    list-style: none;
+
+    background: #fff;
+}
+
+.boxright div.privateList .privateUserList:hover
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.boxright div.privateList .privateUserList .privateUser
+{
+    font-size: 16px;
+
+    margin-left: -50px;
+
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.boxright div.privateList .privateUserList .privateUser p
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    margin-left: 50px;
+
+    color: #666;
+}
+
+.boxright div.privateList .privateUser:hover p
+{
+    font-weight: bold;
+
+    color: #41c197;
+}
+
+.box input
+{
+    height: 40px;
+}
