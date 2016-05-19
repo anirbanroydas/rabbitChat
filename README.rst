@@ -3,11 +3,17 @@ rabbitChat
 
 A Chat-Server/Chat-System based on AMQP protocol(RabbitMQ Message Broker)
 
+
 Documentation
 --------------
 
 **Link :** http://rabbitchat.readthedocs.io/en/latest/index.html
 
+
+Project Home Page
+--------------------
+
+**Link :** https://pypi.python.org/pypi/rabbitChat
 
 
 
