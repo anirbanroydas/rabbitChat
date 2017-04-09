@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+  rabbitChat_e2e_tester:
+    build: ../..
+    image: aroyd/rabbitChat_e2e_test:${RABBITCHAT_E2E_TEST_IMAGE_TAG:-latest}
+    environment:
+      ENV: END_TO_END_TEST 
+    depends_on:
+      - rabbitmq
+  
+
+  rabbitmq:
+    image: rabbitmq:3.6.9-management-alpine
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
