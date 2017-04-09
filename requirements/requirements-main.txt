@@ -1,0 +1,4 @@
+tornado >= 2.2.1
+sockjs-tornado
+pika
+setuptools >= 0.7.0
