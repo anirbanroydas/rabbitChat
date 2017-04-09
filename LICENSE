@@ -2,7 +2,7 @@ The MIT License (MIT)
 
 rabbitChat - Chat Server based on AMQP  protocol using RabbitMQ message broker, sockjs client, sockjs-tornado, tornado and amqp python client PIKA.
 
-Copyright (c) 2016 Anirban Roy Das <anirban.nick@gmail.com>
+Copyright (c) 2017 Anirban Roy Das <anirban.nick@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
