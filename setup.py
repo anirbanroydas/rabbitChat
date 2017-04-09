@@ -18,7 +18,7 @@ import os
 
 NAME = "rabbitChat"
 
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 
 
 PACKAGES = ["rabbitChat", "rabbitChat.apps", "rabbitChat.apps.main", "rabbitChat.apps.rabbitmq"]
