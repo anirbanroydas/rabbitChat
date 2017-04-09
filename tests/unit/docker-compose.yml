@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  rabbitChat_unit_tester:
+    build: ../..
+    image: aroyd/rabbitChat_unit_tester:${RABBITCHAT_UNIT_TEST_IMAGE_TAG:-latest}
+    environment:
+      ENV: UNIT_TEST 
+    # volumes:
+    #   - .:/project
+
+
