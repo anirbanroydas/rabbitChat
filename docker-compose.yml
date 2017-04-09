@@ -6,7 +6,7 @@ services:
     build: .
     image: ${DOCKER_REPO}:${DOCKER_IMAGE_DEV_TAG:-latest-dev}
     ports:
-      - "5010:5001"
+      - "5001:5001"
     environment:
       ENV: DEV
     volumes:
