@@ -1,0 +1,71 @@
+version: "3"
+
+services:
+
+  rabbitChat:
+    image: ${DOCKER_REPO}:${DOCKER_IMAGE_PROD_TAG:-latest}
+    ports:
+      - "9091:9091"
+    environment:
+      ENV: PROD
+    # env_file: docker-production.env
+    labels:
+      io.aroyd.service.container.name: "rabbitChat"
+      io.aroyd.servcie.container.env: "production"
+
+    deploy:
+      mode: replicated
+      replicas: 4
+      placement:
+        constraints:
+          - node.role == worker
+      update_config:
+        parallelism: 2
+        delay: 30s
+        failure_action: pause
+        monitor: 20s
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
+        window: 120s
+      labels:
+        io.aroyd.service.task.name: "rabbitChat"
+        io.aroyd.service.task.env: "production"
+  
+  
+  rabbitmq:
+    image: rabbitmq:3.6.9-management-alpine
+    labels:
+      io.aroyd.service.container.name: "rabbitmq"
+      io.aroyd.servcie.container.env: "production"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+    deploy:
+      placement:
+        constraints:
+          - engine.labels.io.aroyd.machine.aws.az == a
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: pause
+        monitor: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
+        window: 120s
+    volumes:
+      - rabbitmq_data_volume:${RABBITMQ_DATA_DIR:-/var/lib/rabbitmq/mnesia/rabbit@rabbitmq}
+
+
+volumes:
+  rabbitmq_data_volume:
+    driver: rexray
+    driver_opts:
+      volumeType: "gp2"
+      size: "4"
+      availabilityZone: "ap-south-1a"
