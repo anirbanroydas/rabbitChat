@@ -1,0 +1,75 @@
+sudo: required
+
+language: python
+
+python:
+  - '3.6'
+
+services:
+  - docker
+
+env:
+  global:
+    - STAGING_RESULT: false
+    - DEPLOY_PRODUCTION: nope
+    - DEPLOY_IDENTIDOCK_IMAGE_TAG: master
+    - DOCKER_COMPOSE_VERSION: 1.11.2
+    - DOCKER_VERSION: 17.03.0-ce
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+  - sudo docker --version
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - which docker-compose
+  - docker-compose --version
+
+install:
+  - pip install coveralls
+
+script:
+  - make test-unit
+  - make test-component
+
+after_success:
+  - coverage combine --append && coveralls
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+        make build-tag-push;
+    fi
+
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_secret_key -iv $encrypted_secret_iv -in travis_deploy_rsa.enc -out /tmp/travis_deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/travis_deploy_rsa
+  - ssh-add /tmp/travis_deploy_rsa
+  - source scripts/add_known_hosts.sh
+  # - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+  # make deploy DEPLOY_ENVIRONMENT=staging && make test-e2e;
+  # fi
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: make deploy
+  on:
+    branch: master
+    condition: $TRAVIS_PULL_REQUEST = false
+    # tags: true
+
+notifications:
+  email:
+    recipients:
+      - anirban.nick@gmail.com
+    on_success: never
+    on_failure: always
+  
+  slack:    
+    rooms:
+      - secure: secret_token
+      - secure: secret_token
+    on_success: always
+    on_failure: always 
+
