@@ -26,6 +26,8 @@ $(document).ready(function() {
         myFunction();
     });
 
+    
+
 
     // Default variables
     
@@ -454,4 +456,13 @@ $(document).ready(function() {
         // Todo -> verifying who has sent the message and notifying the user with print(m,'private')
     }
 
+    let a = (x, y) => {
+        return x + y;
+    };
+
+    class Tommy {
+        constructer {
+
+        }
+    }
 });
