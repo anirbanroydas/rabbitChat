@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  rabbitChat_contract_tester:
+    build: ../..
+    image: aroyd/rabbitChat_contract_tester:${RABBITCHAT_CONTRACT_TEST_IMAGE_TAG:-latest}
+    environment:
+      ENV: CONTRACT_TEST 
+
+
