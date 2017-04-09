@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  rabbitChat_component_tester:
+    build: 
+      context: ../..
+      dockerfile: tests/component/Dockerfile
+    image: aroyd/rabbitChat_component_tester:${RABBITCHAT_COMPONENT_TESTER_IMAGE_TAG:-latest}
+    depends_on:
+      - rabbitChat
+  
+
+  rabbitChat:
+    build: ../..
+    image: aroyd/rabbitChat_component_test:${RABBITCHAT_COMPONENT_TEST_IMAGE_TAG:-latest}
+    environment:
+      ENV: COMPONENT_TEST 
+    depends_on:
+      - rabbitmq
+  
+
+  rabbitmq:
+    image: rabbitmq:3.6.9-management-alpine
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+  
