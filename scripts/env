@@ -1,0 +1,10 @@
+export DOCKER_EMAIL=<email_registered_with_docker_registry>
+export DOCKER_REPO=<user/repo_name of your docker repository>
+export DOCKER_USER=<docker_registry_username>
+export DOCKER_PASS=<docker_registery_password>
+export MANAGER_COUNT=<count_of_docker_swarm_managers>
+export MANAGER_1=<IP_Address_of_Manager_1>
+export MANAGER_2=<IP_Address_of_Manager_2>
+export MANAGER_3=<IP_Address_of_Manager_3_and_continue_like_this_for_all_the_managers>
+export SERVER_USER=<remote_server_user_access_to_ssh>
+export JENKINS_SERVER=<server_ip_of_jenkins>
