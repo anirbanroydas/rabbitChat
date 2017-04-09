@@ -7,8 +7,7 @@ Welcome to rabbitChat's documentation!
 ======================================
 
 
-A Chat-Server/Chat-System based on AMQP protocol(RabbitMQ Message Broker)
-
+A Chat-Server/Chat-System based on AMQP protocol(RabbitMQ Message Broker) written in python using Tornado and RabbitMQ.
 **Home Page :** https://pypi.python.org/pypi/rabbitChat
 
 
@@ -17,7 +16,7 @@ Details
 
 :Author: Anirban Roy Das         
 :Email: anirban.nick@gmail.com
-:Copyright(C): 2016, Anirban Roy Das <anirban.nick@gmail.com>
+:Copyright(C): 2017, Anirban Roy Das <anirban.nick@gmail.com>
 
 Check ``rabbitChat/LICENSE`` file for full Copyright notice.
 
@@ -32,9 +31,10 @@ Documentation:
    overview
    features
    installation
+   ci_setup
    usage
    api
-   references
+   testing
 
 
 
