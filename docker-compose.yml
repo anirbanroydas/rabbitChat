@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  rabbitChat:
+    build: .
+    image: ${DOCKER_REPO}:${DOCKER_IMAGE_DEV_TAG:-latest-dev}
+    ports:
+      - "5010:5001"
+    environment:
+      ENV: DEV
+    volumes:
+      - ./rabbitChat:/project/rabbitChat
+    depends_on:
+      - rabbitmq
+  
+
+  rabbitmq:
+    image: rabbitmq:3.6.9-management-alpine
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
