@@ -432,7 +432,7 @@ After having installed rabbitChat via pip, just the run the following commands t
 
 
 Test
-~~~~
+-----
 
 **NOTE:** Testing is only done using the Docker Method. anyway, it should not matter whether you run your application using the Docker Method or the Standalone Method. Testing is independent of it.
 
